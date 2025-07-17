@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,500,700"
+      rel="stylesheet"
+    />
+
+    <!-- style sheets -->
+    <link rel='stylesheet' href='/src/style.css'>
+
+    <title>Modal Window</title>
+    <script defer src="/src/main.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="wrap">
+        <button class="button jsModalButton">Click me!</button>
+        <svg class="point-hand" viewBox="0 0 58 66">
+          <use xlink:href="src/images/sprite.svg#point-hand" />
+        </svg>
+      </div>
+    </main>
+    <!-- modal overlay -->
+    <div class="modal-overlay jsModalOverlay">
+      <div class="modal">
+        <div class="modal__content">
+          <svg class="wave-hand" width="112" height="139" viewBox="0 0 112 139">
+            <use xlink:href="src/images/sprite.svg#wave-hand"/>
+          </svg>
+          <button class="modal__close-button jsModalClose">
+            <svg width="1em" height="1em" viewBox="0 0 18 18">
+              <use xlink:href="src/images/sprite.svg#close" />
+
+            </svg>
+
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>
