@@ -96,15 +96,69 @@ main {
     max-width: 30em;
 }
 
+/* Point hand animation*/
+@keyframes point {
+    0% {
+        transform: translateY(4em);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 .point-hand {
     position: absolute;
     left: 0;
     right: 0;
-    /* max-width: 3em; */
     margin-top: 7em;
     margin-right: auto;
     margin-left: auto;
     color: var(--magenta-300);
+    animation: point 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+/* Makes waving hand zoom out */
+@keyframes zoom {
+    0% {
+        transform: scale(.25);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(0);
+    }
+    20% {
+        transform: rotate(15deg);
+    }
+    40% {
+        transform: rotate(-15deg);
+    }
+    60% {
+        transform: rotate(15deg);
+    }
+    80% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.modal-is-open .wave-hand {
+    transform-origin: bottom center;
+    animation: 
+        zoom 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28),
+        /* create a delay for the wave animation. */
+        wave 1s 0.55s ease-in-out;
+ 
 }
 
 /* modal */
@@ -128,6 +182,12 @@ main {
     transition: 
         opacity 0.3s ease-out, /**/
         z-index 0s 0.3s linear; /*so 'click-me' button appears after modal is fades*/
+}
+
+body.modal-is-open .modal-overlay {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0s;
 }
 
 .modal {
@@ -172,24 +232,4 @@ main {
     opacity: 1;
     z-index: 1;
     transition-delay: 0s; /*no transition delay on z-index*/
-}
-
-/* ===================
-  CSS Animation
-======================*/
-
-@keyframes point {
-    0% {
-        transform: translateY(4em);
-        opacity: 0;
-    }
-    
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.point-hand {
-    animation: point 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
