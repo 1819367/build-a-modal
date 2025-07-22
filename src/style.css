@@ -67,7 +67,7 @@ body {
 }
 
 .button {
-    padding: .75em .75rem;
+    padding: 1.25rem 1rem;
     border: none;
     border-radius: 4px;
     background-color: var(--magenta-300); 
@@ -75,7 +75,8 @@ body {
     font-size: var(--fs-body);
     font-weight: var(--fw-reg);
     /* for animation */
-    transition: backgound-color 0.3s ease-out;
+    transition: background-color 0.3s ease-out;
+    font-size: 1.75rem;
 }
 
 .button:hover,
@@ -99,11 +100,11 @@ main {
     position: absolute;
     left: 0;
     right: 0;
-    max-width: 3em;
-    margin-top: 3.5em;
+    /* max-width: 3em; */
+    margin-top: 7em;
     margin-right: auto;
     margin-left: auto;
-    color: var(--magenta-300)
+    color: var(--magenta-300);
 }
 
 /* modal */
@@ -114,7 +115,6 @@ main {
     align-items: center;
     padding: 1em;
     background: var(--magenta-200);
-
     /* creates the overlay */
     position: fixed;
     top: 0;
@@ -172,4 +172,24 @@ main {
     opacity: 1;
     z-index: 1;
     transition-delay: 0s; /*no transition delay on z-index*/
+}
+
+/* ===================
+  CSS Animation
+======================*/
+
+@keyframes point {
+    0% {
+        transform: translateY(4em);
+        opacity: 0;
+    }
+    
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.point-hand {
+    animation: point 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
