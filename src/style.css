@@ -70,10 +70,12 @@ body {
     padding: .75em .75rem;
     border: none;
     border-radius: 4px;
-    background: var(--magenta-300);
+    background-color: var(--magenta-300); 
     color: #fff;
     font-size: var(--fs-body);
-    font-weight: var(--fw-reg)
+    font-weight: var(--fw-reg);
+    /* for animation */
+    transition: backgound-color 0.3s ease-out;
 }
 
 .button:hover,
@@ -122,6 +124,10 @@ main {
     /* closes the modal*/
     opacity: 0;  
     z-index: -1; 
+    /* animating the modal window */
+    transition: 
+        opacity 0.3s ease-out, /**/
+        z-index 0s 0.3s linear; /*so 'click-me' button appears after modal is fades*/
 }
 
 .modal {
@@ -134,7 +140,6 @@ main {
     color: #fff;
     min-width: 50vmin;
     min-height: 50vmin;
-  
 }
 
 .modal__close-button {
@@ -166,4 +171,5 @@ main {
 .modal-is-open .modal-overlay {
     opacity: 1;
     z-index: 1;
+    transition-delay: 0s; /*no transition delay on z-index*/
 }
