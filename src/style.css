@@ -96,8 +96,9 @@ main {
     max-width: 30em;
 }
 
+/* Code below removed. Animated with GSAP */
 /* Point hand animation*/
-@keyframes point {
+/* @keyframes point {
     0% {
         transform: translateY(4em);
         opacity: 0;
@@ -106,7 +107,7 @@ main {
         transform: translateY(0);
         opacity: 1;
     }
-}
+} */
 
 .point-hand {
     position: absolute;
@@ -119,8 +120,9 @@ main {
     animation: point 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
-/* Makes waving hand zoom out */
-@keyframes zoom {
+/* Code below removed. Animated with GSAP */
+/* Makes waving hand zoom out with CSS Animation*/
+/* @keyframes zoom {
     0% {
         transform: scale(.25);
         opacity: 0;
@@ -155,11 +157,11 @@ main {
 .modal-is-open .wave-hand {
     transform-origin: bottom center;
     animation: 
-        zoom 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28),
+        zoom 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28), */
         /* create a delay for the wave animation. */
-        wave 1s 0.55s ease-in-out;
+        /* wave 1s 0.55s ease-in-out;
  
-}
+} */
 
 /* modal */
 
